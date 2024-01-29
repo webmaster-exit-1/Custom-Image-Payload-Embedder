@@ -1,5 +1,9 @@
 # Custom Image Payload Embedder
 
+## Project Goal
+
+This project aims to create NO-CLICK payloads hidden inside of image files.
+
 ## Description
 
 This Metasploit module embeds a Metasploit payload into an image file. It is designed to be used on Linux platforms and allows for the stealthy execution of payloads within an innocuous-looking image file.
