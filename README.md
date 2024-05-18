@@ -1,6 +1,7 @@
 # Embedded Image Payload Module
 
 This project demonstrates how to create a Metasploit module that embeds a payload into an image file and generates a malicious HTML file to execute the payload on a target machine.
+
 ## Features
 
 - Embeds a payload into an image file using steganography techniques
@@ -72,10 +73,8 @@ This project demonstrates how to create a Metasploit module that embeds a payloa
 
    This will embed the payload into the `image.jpg` file and generate a malicious HTML file named `malicious.html`.
 
-
 ## Disclaimer
 
 This project is intended for educational and research purposes only. The authors and contributors are not responsible for any misuse or damage caused by this project. Use it at your own risk and ensure that you have proper authorization before using it in any real-world scenarios.
 
 Remember to replace **YOUR_IP** with the actual IP address of your machine where you want to receive the reverse shell connection.
-
