@@ -1,0 +1,30 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.2.2
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  Exclude:
+    - 'vendor/**/*'
+    - 'bin/*'
+    - 'db/schema.rb'
+
+# Enforce documentation for public methods, but exclude test files
+Style/Documentation:
+  Enabled: true
+  Exclude:
+    - 'spec/**/*' 
+
+# Consider lowering these limits for better code maintainability
+Metrics/MethodLength:
+  Max: 100 
+
+Metrics/AbcSize:
+  Max: 15  
+
+# Additional style rules for consistency (uncomment as needed)
+# Style/StringLiterals:
+#   EnforcedStyle: double_quotes 
+# Style/FrozenStringLiteralComment:
+#   Enabled: true
