@@ -18,7 +18,7 @@ module EmbeddedImagePayload
       super(update_info(info,
                         'Name' => 'Advanced Image Payload Embedder',
                         'Description' => 'This module embeds a payload into an image file and generates a malicious HTML file.',
-                        'Author' => ['Your Name'],
+                        'Author' => ['WebMaster-Exit-1'],
                         'License' => MSF_LICENSE,
                         'Platform' => 'win',
                         'Targets' => [['Windows', {}]],
