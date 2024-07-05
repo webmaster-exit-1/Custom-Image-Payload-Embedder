@@ -34,24 +34,24 @@ This Metasploit module embeds a payload into an image file and generates a malic
    bundle install
    ```
 
-## Usage
-  1. Customize (Optional):
-    * Modify module.rb to adjust settings like image path and output path.
-    * Customize payload generation or obfuscation techniques in payload.rb if needed.
-  2. Generate Payload and HTML:
-    * Execute your Metasploit module (replace <your_module_filename.rb> with the actual filename):
+## Usage <br>
+  1. Customize (Optional): <br>
+    * Modify module.rb to adjust settings like image path and output path. <br>
+    * Customize payload generation or obfuscation techniques in payload.rb if needed. <br>
+  2. Generate Payload and HTML: <br>
+    * Execute your Metasploit module (replace <your_module_filename.rb> with the actual filename): <br>
    ```rb
    ruby <your_module_filename.rb>
    ```
-  3. Set Up Metasploit Handler:
-    * Open a new terminal and start msfconsole.
-    * Use the exploit/multi/handler module.
-    * Configure the handler to match the payload used in your module.
-    * Set LHOST (your IP) and LPORT.
-    * Start the handler with run.
-  4. Deliver and Execute:
-    * Transfer the generated malicious HTML file to the target machine.
-    * Open the HTML file in a web browser on the target.
+  3. Set Up Metasploit Handler: <br>
+    * Open a new terminal and start msfconsole. <br>
+    * Use the exploit/multi/handler module. <br>
+    * Configure the handler to match the payload used in your module. <br>
+    * Set LHOST (your IP) and LPORT. <br>
+    * Start the handler with run. <br>
+  4. Deliver and Execute: <br>
+    * Transfer the generated malicious HTML file to the target machine. <br>
+    * Open the HTML file in a web browser on the target. <br>
 
 Example
 
