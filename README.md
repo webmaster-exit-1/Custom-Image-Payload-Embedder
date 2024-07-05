@@ -4,6 +4,8 @@ This Metasploit module embeds a payload into an image file and generates a malic
 
 Take note that all my code was created with the help pf LLM's or "AI". All of my code is a suggestion. Anything can be modified or made to execute better. Skill and imagination are all that limits us. <br>
 
+* Inspiration for this project was obtained by how "canary tokens" operate.
+
 **Happy Hacking**
 
 ## Features
