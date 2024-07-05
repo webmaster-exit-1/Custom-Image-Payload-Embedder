@@ -1,6 +1,10 @@
 # Embedded Image Payload Module
 
-This Metasploit module embeds a payload into an image file and generates a malicious HTML file to execute the payload on a target machine.
+This Metasploit module embeds a payload into an image file and generates a malicious HTML file to execute the payload on a target machine. <br>
+
+Take note that all my code was created with the help pf LLM's or "AI". All of my code is a suggestion. Anything can be modified or made to execute better. Skill and imagination are all that limits us. <br>
+
+**Happy Hacking**
 
 ## Features
 
