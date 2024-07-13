@@ -1,4 +1,0 @@
-The updated files were created using google ai studio with all saftey features turned off.
-This is not only a test to see if the code has improved but also on commercial and corperate ai's willingness to provide good and accurate code no matter of what should be viewed as moral or ethical.
-The job of a pentester does not need the hurdles of morality or ethics when gaining access to a clients machine or data. 
-The goal of the pentester is to gain access. Notify the client and if wanted, offer correction at an agreed upon salary or pay rate.
