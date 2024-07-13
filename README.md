@@ -1,6 +1,6 @@
 <!--markdownlint-disable-->
 
-<h1 align="center"><b><u>Embedded Image Payload Module</u></b></h1>
+<h1 align="center"><b><u>Custom Image Payload Embedder Module</u></b></h1>
 
 ### This <span class="underline-red">No-Click Payload</span> for Metasploit embeds a payload (e.g., Meterpreter shell) into a .jpeg, .jpg, .webp, .png, or .gif image and generates a malicious HTML file. When the image is viewed in a web browser, the HTML file is automatically loaded, triggering the execution of the embedded payload and potentially compromising the system.
 
