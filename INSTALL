@@ -11,9 +11,9 @@ Before proceeding with the installation, ensure that you have the following prer
 - Ruby programming language (version 2.7 or higher)
 - Metasploit framework
 
-If you don't have Ruby installed, you can download and install it from the official Ruby website: <https://www.ruby-lang.org/>
+If you don't have Ruby installed, you can download and install it from the [Official Ruby](https://www.ruby-lang.org/) website.
 
-To install the Metasploit framework, follow the installation instructions specific to your operating system. You can find the installation guide on the official Metasploit website: <https://docs.metasploit.com/docs/using-metasploit/getting-started/nightly-installers.html>
+To install the Metasploit framework, follow the installation instructions specific to your operating system. You can find the installation guide on the [Official Metasploit](https://docs.metasploit.com/docs/using-metasploit/getting-started/nightly-installers.html) website.
 
 Installation Steps
 ------------------
