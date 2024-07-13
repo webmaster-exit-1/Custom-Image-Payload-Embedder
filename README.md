@@ -1,12 +1,22 @@
-# Embedded Image Payload Module
+<!--markdownlint-disable-->
 
-This Metasploit module embeds a payload into an image file and generates a malicious HTML file to execute the payload on a target machine. <br>
+<h1 align="center"><b><u>Embedded Image Payload Module</u></b></h1>
+
+### This <span class="underline-red">No-Click Payload</span> for Metasploit embeds a payload (e.g., Meterpreter shell) into a .jpeg, .jpg, .webp, .png, or .gif image and generates a malicious HTML file. When the image is viewed in a web browser, the HTML file is automatically loaded, triggering the execution of the embedded payload and potentially compromising the system.
+
+**The Breakdown:**
+
+*   _**No User Interaction:**_  The payload is executed without any action required from the victim, except for viewing the image in a browser.
+*   _**HTML File as Trigger:**_ The HTML file acts as the trigger mechanism for the payload. It's automatically loaded when the image is viewed, making the attack seamless.
+*   _**Potential Impact:**_ Every image online is now a potentail "payload".
 
 Take note that all my code was created with the help pf LLM's or "AI". All of my code is a suggestion. Anything can be modified or made to execute better. Skill and imagination are all that limits us. <br>
 
-* Inspiration for this project was obtained by how "canary tokens" operate.
+* _Inspiration for this project was obtained by how [**__Canary Tokens__**](https://canarytokens.org/generate) operate_.
 
-**Happy Hacking**
+<h1><p align="center"><b>Happy Hacking</b></p></h1>
+
+------
 
 ## Features
 
