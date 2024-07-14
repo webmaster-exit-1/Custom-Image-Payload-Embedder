@@ -29,7 +29,7 @@ Take note that all my code was created with the help pf LLM's or "AI". All of my
 ## Requirements
 
 - **Ruby programming language (version 2.7 or higher)**
-- **Metasploit framework:** Follow the installation instructions for your operating system from the official Metasploit website: [https://docs.metasploit.com/docs/using-metasploit/getting-started/nightly-installers.html](https://docs.metasploit.com/docs/using-metasploit/getting-started/nightly-installers.html)
+- **Metasploit framework:** Follow the installation instructions for your operating system from the [Official Metasploit](https://docs.metasploit.com/docs/using-metasploit/getting-started/nightly-installers.html) website.
 
 ## Installation
 
