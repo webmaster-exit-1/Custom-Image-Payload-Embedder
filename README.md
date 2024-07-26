@@ -10,7 +10,7 @@
 *   _**HTML File as Trigger:**_ The HTML file acts as the trigger mechanism for the payload. It's automatically loaded when the image is viewed, making the attack seamless.
 *   _**Potential Impact:**_ Every image online is now a potential "payload".
 
-Take note that all my code was created with the help pf LLM's or "AI". All of my code is a suggestion. Anything can be modified or made to execute better. Skill and imagination are all that limits us. <br>
+Take note that all my code was created with the help of LLM's or "AI". All of my code is a suggestion. Anything can be modified or made to execute better. Skill and imagination are all that limits us. <br>
 
 * _Inspiration for this project was obtained by how [**__Canary Tokens__**](https://canarytokens.org/generate) operate_.
 
