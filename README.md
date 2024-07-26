@@ -49,8 +49,11 @@ Take note that all my code was created with the help pf LLM's or "AI". All of my
    ```rb
    bundle install
    ```
+### **NOTE: How you execute this payload should be simple. <br>
+### There are many ways to obfuscate an html webpage (even a malicious page) that passes all saftey and https requirements. <br>
+### Use your imagination.
 
-## Usage <br>
+## Usage Example <br>
   1. Customize (Optional): <br>
     * Modify module.rb to adjust settings like image path and output path. <br>
     * Customize payload generation or obfuscation techniques in payload.rb if needed. <br>
@@ -66,8 +69,8 @@ Take note that all my code was created with the help pf LLM's or "AI". All of my
     * Set LHOST (your IP) and LPORT. <br>
     * Start the handler with run. <br>
   4. Deliver and Execute: <br>
-    * Transfer the generated malicious HTML file to the target machine. <br>
-    * Open the HTML file in a web browser on the target. <br>
+    * Make a website hosting your html file. <br>
+    * Get victim to view image on website. <br>
 
 Example
 
